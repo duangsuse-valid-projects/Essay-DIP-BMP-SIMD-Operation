@@ -5,6 +5,6 @@ project (libbmp LANGUAGES C)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
 set (CMAKE_C_FLAGS ${CMAKE_C_FLAGS} -std=c11)
 
-add_library (libbmp bmp.c)
+add_library (libbmp STATIC bmp.c)
 
 

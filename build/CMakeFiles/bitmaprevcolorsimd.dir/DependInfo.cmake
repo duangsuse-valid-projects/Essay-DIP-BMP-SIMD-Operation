@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/DuangSUSE/projects/BitMapRevcolorSIMD/main.c" "/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/bitmaprevcolorsimd.dir/main.c.o"
+  "/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/main.c" "/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles/bitmaprevcolorsimd.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -16,7 +16,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/libbmp.dir/DependInfo.cmake"
+  "/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/libbmp/CMakeFiles/libbmp.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

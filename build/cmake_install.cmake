@@ -1,4 +1,4 @@
-# Install script for directory: /home/DuangSUSE/projects/BitMapRevcolorSIMD
+# Install script for directory: /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -44,7 +44,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/bitmaprevcolorsimd"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/bitmaprevcolorsimd")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/bitmaprevcolorsimd")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/bitmaprevcolorsimd" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/bitmaprevcolorsimd")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -55,7 +55,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/cmake_install.cmake")
+  include("/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/libbmp/cmake_install.cmake")
 
 endif()
 
@@ -67,5 +67,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

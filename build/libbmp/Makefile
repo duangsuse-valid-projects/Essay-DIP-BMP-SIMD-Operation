@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/DuangSUSE/projects/BitMapRevcolorSIMD
+CMAKE_SOURCE_DIR = /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/DuangSUSE/projects/BitMapRevcolorSIMD/build
+CMAKE_BINARY_DIR = /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles /home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/progress.marks
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles 0
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/libbmp/CMakeFiles/progress.marks
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/clean
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/preinstall
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/preinstall
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libbmp/CMakeFiles/libbmp.dir/rule:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/CMakeFiles/libbmp.dir/rule
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f CMakeFiles/Makefile2 libbmp/CMakeFiles/libbmp.dir/rule
 .PHONY : libbmp/CMakeFiles/libbmp.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ libbmp: libbmp/CMakeFiles/libbmp.dir/rule
 
 # fast build rule for target.
 libbmp/fast:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/build
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/build
 .PHONY : libbmp/fast
 
 bmp.o: bmp.c.o
@@ -177,7 +177,7 @@ bmp.o: bmp.c.o
 
 # target to build an object file
 bmp.c.o:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/bmp.c.o
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/bmp.c.o
 .PHONY : bmp.c.o
 
 bmp.i: bmp.c.i
@@ -186,7 +186,7 @@ bmp.i: bmp.c.i
 
 # target to preprocess a source file
 bmp.c.i:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/bmp.c.i
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/bmp.c.i
 .PHONY : bmp.c.i
 
 bmp.s: bmp.c.s
@@ -195,7 +195,7 @@ bmp.s: bmp.c.s
 
 # target to generate assembly for a file
 bmp.c.s:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/bmp.c.s
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/bmp.c.s
 .PHONY : bmp.c.s
 
 # Help Target
@@ -225,6 +225,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/DuangSUSE/projects/BitMapRevcolorSIMD/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

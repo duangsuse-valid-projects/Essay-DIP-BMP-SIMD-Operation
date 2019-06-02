@@ -12,7 +12,7 @@ stdint.h
 stdio.h
 -
 
-/home/DuangSUSE/projects/BitMapRevcolorSIMD/libbmp/bmp.c
+/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/libbmp/bmp.c
 bmp.h
 -
 string.h

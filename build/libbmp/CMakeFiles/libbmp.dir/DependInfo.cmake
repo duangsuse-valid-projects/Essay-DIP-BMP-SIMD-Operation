@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/DuangSUSE/projects/BitMapRevcolorSIMD/libbmp/bmp.c" "/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/libbmp.dir/bmp.c.o"
+  "/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/libbmp/bmp.c" "/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/libbmp/CMakeFiles/libbmp.dir/bmp.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

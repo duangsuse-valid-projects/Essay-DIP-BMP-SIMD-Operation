@@ -79,20 +79,21 @@ int main(int argc, char *argv[]) {
   clock_t started = clock();
 
   bool debug = getenv(Env_DBG) !=NULL;
+  bool alpha = getenv("A") !=NULL;
 
   if (getenv("INV"))
-    for (unsigned int row = 0; row <bmp.dib.height; row +=ystep) {
-      for (unsigned int col = 0; col <bmp.dib.width; col +=xstep) {
-        uint32_t *pos = &bmp.pixels[row*bmp.dib.width+col];
-        uint32_t pix = *pos;
-        cp a = pix<<24, r = pix<<16, g = pix<<8, b = pix;
+  for (unsigned int row = 0; row <bmp.dib.height; row +=ystep) {
+    for (unsigned int col = 0; col <bmp.dib.width; col +=xstep) {
+    uint32_t *pos = &bmp.pixels[row*bmp.dib.width+col];
+    uint32_t pix = *pos;
+    cp a = pix<<24, r = pix<<16, g = pix<<8, b = pix;
 
-        if (debug) printf("(%u,%u)=#%02i%02i%02i%02i ", row,col, a, r, g, b);
+    if (debug) printf("(%u,%u)=#%02i%02i%02i%02i ", row,col, a, r, g, b);
 
-        *pos = ~*pos;
-      }
-      if (debug)printf("\n");
+    *pos = alpha ? ~(*pos ^ 0xFF000000) : ~*pos;
     }
+    if (debug)printf("\n");
+  }
   printf("Finished in %li\n", clock() -started);
 
   if (getenv("FASTINV")) fastinv(bmp);
@@ -115,7 +116,7 @@ int main(int argc, char *argv[]) {
   tok = strtok_r(NULL, ",", &saved_tokstate);
   cn = atoi(tok !=NULL?tok: "1");
 
-  //if (rn ==0 || cn ==0) { rn=1, cn=1; }
+  if (rn <=0 || cn <=0) { rn=1, cn=1; }
 
   printf("skip w=%i, h=%i\n", rn, cn);
 
@@ -124,10 +125,10 @@ int main(int argc, char *argv[]) {
     for (unsigned int col = 0; col <bmp.dib.width; col +=cn) {
 
       cp
-      c00 = bmp.pixels[row*w + col] &0xFF000000,
-      c01 = bmp.pixels[row*w + (col+1)],
-      c10 = bmp.pixels[(row+1)*w + col] &0x0a1000bb,
-      c11 = bmp.pixels[(row+1)*w + (col+1)] &0x00aa1100;
+        c00 = bmp.pixels[row*w + col] &0xFF000000,
+        c01 = bmp.pixels[row*w + (col+1)],
+        c10 = bmp.pixels[(row+1)*w + col] &0x0a1000bb,
+        c11 = bmp.pixels[(row+1)*w + (col+1)] &0x00aa1100;
 
       cp sum
         = c10 + c11;
@@ -146,6 +147,7 @@ skipDense:
 
   if (argc == 3) {
     FILE *fout = fopen(argv[2], "wb+");
+    if (errno !=0) { perror("Saving file: "); return -2; }
     fprintf(stderr, "Writing to %s\n", argv[2]);
     writeBmpFile(fout, bmp);
     fflush(fout);
@@ -159,26 +161,32 @@ skipDense:
   exit(EXIT_SUCCESS);
 }
 
+// begin MMX part
 #include <xmmintrin.h>
 
+typedef long long *llptr;
+typedef unsigned long long *ullptr;
+
 // MMX: process 8 pixels in a roll
+
+/** Argument 1 for MMX arbitrary operators */
 thread_local __m64 arg0;
+
 thread_local __m64 x0, x1, x2, x3;
-thread_local long long y0_, y1_, y2, y3;
+thread_local signed long long _y0, _y1, y2, y3;
 
-static size_t w, h;
-static size_t stride;
+static size_t /** image width */w, /** image height */h;
+static size_t /** image stride */stride;
 
+/** Is DBG= env flag set */
 bool debug = false;
 
-typedef long long *llptr;
-
-static void handleEightPixel(long long *scan1, long long *scan0, unsigned row) {
-  llptr
-  p0=scan1 +0,
-  p1=scan1 +1,
-  p2=scan1 +2,
-  p3=scan1 +3;
+static void handleEightPixel(ullptr scan1, ullptr scan0, unsigned row) {
+  ullptr
+    p0=scan1 +0,
+    p1=scan1 +1,
+    p2=scan1 +2,
+    p3=scan1 +3;
 
   // 4 * m128 -> 8 * u64
   x0 = _mm_cvtsi64_m64(*p0);
@@ -193,7 +201,7 @@ static void handleEightPixel(long long *scan1, long long *scan0, unsigned row) {
   x3 = _mm_and_si64(x3, arg0);
 
   // do output
-  y0_ = _mm_cvtm64_si64(x0), y1_ = _mm_cvtm64_si64(x1),
+  _y0 = _mm_cvtm64_si64(x0), _y1 = _mm_cvtm64_si64(x1),
   y2 = _mm_cvtm64_si64(x2), y3 = _mm_cvtm64_si64(x3);
 
   if (debug) {
@@ -202,15 +210,15 @@ static void handleEightPixel(long long *scan1, long long *scan0, unsigned row) {
     printf("  = %lli %lli %lli %lli\n", *p0, *p1, *p2, *p3);
   }
 
-  *p0=y0_,*p1=y1_,*p2=y2,*p3=y3;
+  *p0=_y0,*p1=_y1,*p2=y2,*p3=y3;
 }
 
-static void handleEightPixelJustInv(long long *scan1, long long *scan0, unsigned row) {
-  llptr
-  p0=scan1,
-  p1=scan1 +1,
-  p2=scan1 +2,
-  p3=scan1 +3;
+static void handleEightPixelJustInv(ullptr scan1, ullptr scan0, unsigned row) {
+  ullptr
+    p0=scan1 +0,
+    p1=scan1 +1,
+    p2=scan1 +2,
+    p3=scan1 +3;
 
   // 4 * m128 -> 8 * u64
   x0 = _mm_cvtsi64_m64(*p0);
@@ -225,7 +233,7 @@ static void handleEightPixelJustInv(long long *scan1, long long *scan0, unsigned
   x3 = _mm_xor_si64(x3, arg0);
 
   // do output
-  y0_ = _mm_cvtm64_si64(x0), y1_ = _mm_cvtm64_si64(x1),
+  _y0 = _mm_cvtm64_si64(x0), _y1 = _mm_cvtm64_si64(x1),
   y2 = _mm_cvtm64_si64(x2), y3 = _mm_cvtm64_si64(x3);
 
   if (debug) {
@@ -234,7 +242,7 @@ static void handleEightPixelJustInv(long long *scan1, long long *scan0, unsigned
     printf("  = %lli %lli %lli %lli\n", *p0, *p1, *p2, *p3);
   }
 
-  *p0=y0_,*p1=y1_,*p2=y2,*p3=y3;
+  *p0=_y0,*p1=_y1,*p2=y2,*p3=y3;
 }
 
 bool usexor;
@@ -242,9 +250,9 @@ bool usexor;
 static void handleRow(unsigned int *matrix, unsigned int row) {
   long long *scan0 = (long long *) &matrix[row*row];
 
-  void (*proced)(long long *, long long *, unsigned) = (usexor ? handleEightPixelJustInv : handleEightPixel);
+  void (*proced)(ullptr, ullptr, unsigned) = (usexor ? handleEightPixelJustInv : handleEightPixel);
   for (long long *scan1 = scan0 +stride, *end = scan0-4; scan1 !=end; scan1 -=4) {
-    proced(scan1, scan0, row);
+    proced((ullptr) scan1, (ullptr) scan0, row);
   }
 }
 
@@ -287,9 +295,9 @@ void fastinv(const Bmp img) {
   thrd_t threads[h];
   unsigned int cthr = 0;
   if (parallel) for (int row = h; row !=-1; --row) {
-      RowRtnT args = { .matr=pix, .n=row };
-      thrd_create(&threads[cthr++], handleRowThreadRtn, (void *) &args);
-    } else for (int row = h; row !=-1; --row)handleRow(pix, row);
+    RowRtnT args = { .matr=pix, .n=row };
+    thrd_create(&threads[cthr++], handleRowThreadRtn, (void *) &args);
+  } else for (int row = h; row !=-1; --row)handleRow(pix, row);
 
   for (; cthr >0; cthr--) thrd_join(threads[cthr], NULL);
   _mm_empty();

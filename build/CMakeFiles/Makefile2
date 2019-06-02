@@ -59,10 +59,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/DuangSUSE/projects/BitMapRevcolorSIMD
+CMAKE_SOURCE_DIR = /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/DuangSUSE/projects/BitMapRevcolorSIMD/build
+CMAKE_BINARY_DIR = /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/bitmaprevcolorsimd.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/DuangSUSE/projects/BitMapRevcolorSIMD/build
 CMakeFiles/bitmaprevcolorsimd.dir/all: libbmp/CMakeFiles/libbmp.dir/all
 	$(MAKE) -f CMakeFiles/bitmaprevcolorsimd.dir/build.make CMakeFiles/bitmaprevcolorsimd.dir/depend
 	$(MAKE) -f CMakeFiles/bitmaprevcolorsimd.dir/build.make CMakeFiles/bitmaprevcolorsimd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles --progress-num=1,2 "Built target bitmaprevcolorsimd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles --progress-num=1,2 "Built target bitmaprevcolorsimd"
 .PHONY : CMakeFiles/bitmaprevcolorsimd.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/bitmaprevcolorsimd.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/bitmaprevcolorsimd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/bitmaprevcolorsimd.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles 0
 .PHONY : CMakeFiles/bitmaprevcolorsimd.dir/rule
 
 # Convenience name for target.
@@ -126,7 +126,7 @@ libbmp/preinstall:
 libbmp/CMakeFiles/libbmp.dir/all:
 	$(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/depend
 	$(MAKE) -f libbmp/CMakeFiles/libbmp.dir/build.make libbmp/CMakeFiles/libbmp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles --progress-num=3,4 "Built target libbmp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles --progress-num=3,4 "Built target libbmp"
 .PHONY : libbmp/CMakeFiles/libbmp.dir/all
 
 # Include target in all.
@@ -136,9 +136,9 @@ all: libbmp/CMakeFiles/libbmp.dir/all
 
 # Build rule for subdir invocation for target.
 libbmp/CMakeFiles/libbmp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 libbmp/CMakeFiles/libbmp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/DuangSUSE/projects/Essay-DIP-BMP-SIMD-Operation/build/CMakeFiles 0
 .PHONY : libbmp/CMakeFiles/libbmp.dir/rule
 
 # Convenience name for target.
