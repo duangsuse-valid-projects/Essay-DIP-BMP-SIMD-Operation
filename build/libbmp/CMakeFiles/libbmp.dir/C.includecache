@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../libbmp/bmp.h
+stdint.h
+-
+stdio.h
+-
+
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/libbmp/bmp.c
+bmp.h
+-
+string.h
+-
+errno.h
+-
+malloc.h
+-
+

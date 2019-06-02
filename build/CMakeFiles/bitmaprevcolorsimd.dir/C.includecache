@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+..//libbmp/bmp.h
+stdint.h
+-
+stdio.h
+-
+
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/main.c
+stdio.h
+-
+stdlib.h
+-
+signal.h
+-
+unistd.h
+-
+string.h
+-
+time.h
+-
+libbmp/bmp.h
+-
+errno.h
+-
+stdbool.h
+-
+threads.h
+-
+xmmintrin.h
+-
+

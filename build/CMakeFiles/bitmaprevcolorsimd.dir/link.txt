@@ -1,0 +1,1 @@
+/usr/bin/cc -march=core2 -mmmx -msse -g   CMakeFiles/bitmaprevcolorsimd.dir/main.c.o  -o bitmaprevcolorsimd libbmp/liblibbmp.a -lpthread 

@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/DuangSUSE/projects/BitMapRevcolorSIMD/build",
+  "command": "/usr/bin/cc  -I/home/DuangSUSE/projects/BitMapRevcolorSIMD/build -I/home/DuangSUSE/projects/BitMapRevcolorSIMD  -march=core2 -mmmx -msse -g   -o CMakeFiles/bitmaprevcolorsimd.dir/main.c.o   -c /home/DuangSUSE/projects/BitMapRevcolorSIMD/main.c",
+  "file": "/home/DuangSUSE/projects/BitMapRevcolorSIMD/main.c"
+},
+{
+  "directory": "/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp",
+  "command": "/usr/bin/cc  -I/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp -I/home/DuangSUSE/projects/BitMapRevcolorSIMD/libbmp  -std=c11 -g   -o CMakeFiles/libbmp.dir/bmp.c.o   -c /home/DuangSUSE/projects/BitMapRevcolorSIMD/libbmp/bmp.c",
+  "file": "/home/DuangSUSE/projects/BitMapRevcolorSIMD/libbmp/bmp.c"
+}
+]

@@ -1,0 +1,14 @@
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/install/strip.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/edit_cache.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/bitmaprevcolorsimd.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/rebuild_cache.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/list_install_components.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/install/local.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/CMakeFiles/install.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/install/strip.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/edit_cache.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/libbmp.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/rebuild_cache.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/list_install_components.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/install/local.dir
+/home/DuangSUSE/projects/BitMapRevcolorSIMD/build/libbmp/CMakeFiles/install.dir
