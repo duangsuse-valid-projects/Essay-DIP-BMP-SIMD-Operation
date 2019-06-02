@@ -175,10 +175,10 @@ typedef long long *llptr;
 
 static void handleEightPixel(long long *scan1, long long *scan0, unsigned row) {
   llptr
-    p0=scan1 +0,
-    p1=scan1 +1,
-    p2=scan1 +2,
-    p3=scan1 +3;
+  p0=scan1 +0,
+  p1=scan1 +1,
+  p2=scan1 +2,
+  p3=scan1 +3;
 
   // 4 * m128 -> 8 * u64
   x0 = _mm_cvtsi64_m64(*p0);
@@ -207,10 +207,10 @@ static void handleEightPixel(long long *scan1, long long *scan0, unsigned row) {
 
 static void handleEightPixelJustInv(long long *scan1, long long *scan0, unsigned row) {
   llptr
-    p0=scan1,
-    p1=scan1 +1,
-    p2=scan1 +2,
-    p3=scan1 +3;
+  p0=scan1,
+  p1=scan1 +1,
+  p2=scan1 +2,
+  p3=scan1 +3;
 
   // 4 * m128 -> 8 * u64
   x0 = _mm_cvtsi64_m64(*p0);
@@ -242,9 +242,9 @@ bool usexor;
 static void handleRow(unsigned int *matrix, unsigned int row) {
   long long *scan0 = (long long *) &matrix[row*row];
 
-  void (*proced)(long long*, long long *, unsigned) = (usexor ? handleEightPixelJustInv : handleEightPixel);
+  void (*proced)(long long *, long long *, unsigned) = (usexor ? handleEightPixelJustInv : handleEightPixel);
   for (long long *scan1 = scan0 +stride, *end = scan0-4; scan1 !=end; scan1 -=4) {
-    proced (scan1, scan0, row);
+    proced(scan1, scan0, row);
   }
 }
 
@@ -287,9 +287,9 @@ void fastinv(const Bmp img) {
   thrd_t threads[h];
   unsigned int cthr = 0;
   if (parallel) for (int row = h; row !=-1; --row) {
-    RowRtnT args = { .matr=pix, .n=row };
-    thrd_create(&threads[cthr++], handleRowThreadRtn, (void *) &args);
-  } else for (int row = h; row !=-1; --row)handleRow(pix, row);
+      RowRtnT args = { .matr=pix, .n=row };
+      thrd_create(&threads[cthr++], handleRowThreadRtn, (void *) &args);
+    } else for (int row = h; row !=-1; --row)handleRow(pix, row);
 
   for (; cthr >0; cthr--) thrd_join(threads[cthr], NULL);
   _mm_empty();
