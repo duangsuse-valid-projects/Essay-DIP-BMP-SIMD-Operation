@@ -22,16 +22,16 @@ __！！！__ 此项目包括以下学习：
 
 以下操作以 source 为输入 dest 为输出叠加执行（实际上所有操作叠加式在 source 的 buffer 里进行）
 
-`INV=` 只要不为空，进行串行（scalar）反色
-`FASTINV=` 只要不为空，进行 MMX SIMD 指令集加速反色（不一定是反色，实际上是以 8 像素，四个 `long long int` 为单位对 `unsigned int` 位图进行矩阵处理）
-`DENSE=` 只要不为空，进行 Dense 操作，如果格式 `DENSE=xskip,yskip` 正确且 `xskip`, `yskip` 皆大于零，以他们为循环步长，否则以默认值 1,1 为 dense 像素点的间隔（直接由循环步长决定）
+- `INV=` 只要不为空，进行串行（scalar）反色
+- `FASTINV=` 只要不为空，进行 MMX SIMD 指令集加速反色（不一定是反色，实际上是以 8 像素，四个 `long long int` 为单位对 `unsigned int` 位图进行矩阵处理）
+- `DENSE=` 只要不为空，进行 Dense 操作，如果格式 `DENSE=xskip,yskip` 正确且 `xskip`, `yskip` 皆大于零，以他们为循环步长，否则以默认值 1,1 为 dense 像素点的间隔（直接由循环步长决定）
 
-`MASK=` 只要不为空，设置 FASTINV AND 和 XOR 操作的 bitmask，预期 16 进制值
-`ALPHA=` 尝试支持 Alpha 色值
-`THR=`只要不为空，尝试并发多线程执行 SIMD 操作，我不知道这（设置正确的 `thread_local` 后）有没有可能或者会不会更慢！注意，__目前的所有测试都失败了__
-`XOR=` 只要不为空，FASTINVCOLOR 将对每个像素（准确地说是对每两个像素）执行 XOR 运算而非 AND 运算，这有可能实现反色
+- `MASK=` 只要不为空，设置 FASTINV AND 和 XOR 操作的 bitmask，预期 16 进制值
+- `ALPHA=` 尝试支持 Alpha 色值
+- `THR=`只要不为空，尝试并发多线程执行 SIMD 操作，我不知道这（设置正确的 `thread_local` 后）有没有可能或者会不会更慢！注意，__目前的所有测试都失败了__
+- `XOR=` 只要不为空，FASTINVCOLOR 将对每个像素（准确地说是对每两个像素）执行 XOR 运算而非 AND 运算，这有可能实现反色
 
-`DBG=` 只要不为空，打印调试信息
+- `DBG=` 只要不为空，打印调试信息
 
 调试信息包括
 
@@ -287,6 +287,12 @@ void fastinv(const Bmp img) {
 来自 [Telegram 滑稽表情包]，滑稽生活，健康你我！（滑稽）
 
 [Telegram 滑稽表情包]: https://t.me/addstickers/TiebaStickers
+
+## 相关链接 See Also
+
++ [C# GTK# 多线程反色](https://github.com/duangsuse-valid-projects/Essay-CSharp-DIP.Performance.Parallel)
++ [AsciiKt](https://github.com/duangsuse-valid-projects/Essay-Kotlin-AsciiArt/)
++ [Img2Ascii](https://gist.github.com/duangsuse/8261454d4c4157f2bb8ccf233a00d48a)
 
 ## 算法输出？比如说？ Images （多图慎滑，当然主动加载的可别怪我）
 
